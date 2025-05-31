@@ -1,0 +1,19 @@
+module setting_temp(
+input key0,
+input key1,
+input clock,
+output reg [9:0] out_temp);
+
+
+out_temp = 10'd30;
+
+	 always@(posedge clock) begin
+		if (key0) begin
+		out_temp <= out_temp - 100;
+		end
+	   if (key1) begin
+		out_temp <= out_temp - 100;
+		end
+		else 
+		out_temp <= out_temp;
+	end

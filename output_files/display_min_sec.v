@@ -1,0 +1,26 @@
+module display_min_sec (
+input clock,
+output wire [3:0] sec_units, sec_tens, min_units, min_tens);
+
+	//Timing vars
+	reg [5:0] seconds;
+	reg [5:0] minutes;
+
+	// Flip-Flop for seconds and minutes
+	always @(posedge clock) begin
+		seconds <= seconds + 1;
+		if (seconds > 59) begin
+		minutes <= minutes + 1;
+		seconds <= 0;
+		end
+	end
+	
+	
+	 // Second and Minute to HEX
+    assign sec_units = seconds % 10;
+    assign sec_tens  = seconds / 10;
+    assign min_units = minutes % 10;
+    assign min_tens  = minutes / 10;
+	
+	
+	 endmodule

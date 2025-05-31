@@ -1,0 +1,25 @@
+module heating_up (
+input wire [9:0] input_temp,
+input wire clock, 
+input wire heat,
+output reg [9:0] oven_temp);
+
+	parameter upper_threshold = input_temp + 4;
+	parameter lower_threshold = input_temp - 4;
+
+	always@(clock) begin
+		if (heat == 1) begin
+			if (oven_temp => upper_threshold) begin
+				oven_temp = oven_temp + 2;
+				
+			end else 
+				if (oven_temp =< lower_threshold) begin
+				 oven_temp = oven_temp - 2;
+				end
+			else begin
+				oven_temp = oven_temp;
+				end
+			end
+		end
+
+endmodule 

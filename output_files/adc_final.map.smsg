@@ -1,0 +1,2 @@
+Warning (10268): Verilog HDL information at adc_final.v(78): always construct contains both blocking and non-blocking assignments File: C:/Users/sistachss/Documents/Digital Circuit Design/Quartus/adc_final/adc_final.v Line: 78
+Warning (10268): Verilog HDL information at off_clock.v(11): always construct contains both blocking and non-blocking assignments File: C:/Users/sistachss/Documents/Digital Circuit Design/Quartus/adc_final/off_clock.v Line: 11

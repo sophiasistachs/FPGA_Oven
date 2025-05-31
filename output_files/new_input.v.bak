@@ -1,0 +1,8 @@
+module new_input(input btnadd, btnsub, input [6:0] scalar, input [9:0] user, output[9:0] new_val )
+	if (btnadd==0) begin
+        user <= user + scalar;
+    end 
+   if (btnsub==0) begin
+        user <= user - scalar;
+    end 
+end module 
