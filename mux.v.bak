@@ -1,0 +1,11 @@
+module mux (input a, b, sel output y);
+
+	always@()
+	case (sel)
+	1'b0: y = a;
+	1'b1: y = a;
+	default y = a;
+
+	endcase
+endmodule   
+

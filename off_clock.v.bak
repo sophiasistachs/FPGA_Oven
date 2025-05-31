@@ -1,0 +1,29 @@
+module off_clock(input clock, output reg count1, count2);
+
+parameter MAX_COUNT1 = 1500000000;
+parameter MAX_COUNT2 = 90000000000;
+
+reg [30:0] count1 = 0;
+reg [36:0] count2 = 0;
+
+always @ (posedge clock) begin
+	if (count < MAX_COUNT1) begin
+		count <= count +1;
+	end
+	else begin
+		count <= 0;
+		//sec_clock <= ~sec_clock;
+	end
+end
+
+always @ (posedge clock) begin
+	if (count < MAX_COUNT2) begin
+		count <= count +1;
+	end
+	else begin
+		count <= 0;
+		//min_clock <= ~min_clock;
+	end
+end
+
+endmodule
